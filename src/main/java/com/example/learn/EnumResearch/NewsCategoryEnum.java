@@ -1,69 +1,64 @@
-package com.example.learn.枚举研究;
+package com.example.learn.EnumResearch;
 
 
 import lombok.Getter;
-import org.apache.commons.collections.CollectionUtils;
-import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.google.common.collect.Lists;
 
 /**
- * Created by thomas on 16-12-7.
+ * @author lidongyuan
  */
 @Getter
 public enum NewsCategoryEnum {
-    ALL(0,"全部"),
-    MARKET(1,"市场"),
-    POLICY(2,"政策"),
-    LAND(3,"土地"),
-    DATA(4,"数据"),
-    ENTERPRISE(5,"企业"),
-    INTERVIEW(6,"访谈"),
-    PROJECT(7,"项目"),
-    OTHERS(8,"其他"),
+    ALL(0, "全部"),
+    MARKET(1, "市场"),
+    POLICY(2, "政策"),
+    LAND(3, "土地"),
+    DATA(4, "数据"),
+    ENTERPRISE(5, "企业"),
+    INTERVIEW(6, "访谈"),
+    PROJECT(7, "项目"),
+    OTHERS(8, "其他"),
 
-    HOME_WITHDRAW(11,"收房",1),
-    HOME_DESIGN(12,"设计"),
-    HOME_BUDGET(13,"预算",1),
-    HOME_CONTRACT(14,"合同",1),
-    HOME_LOCATION(15,"风水"),
+    HOME_WITHDRAW(11, "收房", 1),
+    HOME_DESIGN(12, "设计"),
+    HOME_BUDGET(13, "预算", 1),
+    HOME_CONTRACT(14, "合同", 1),
+    HOME_LOCATION(15, "风水"),
 
-    HOME_MATERIAL(21,"选材"),
-    HOME_APART(22,"拆改",1),
-    HOME_HYDROELECTRIC(23,"水电",1),
-    HOME_WOOD(24,"泥木",1),
-    HOME_PAINT(25,"油漆",1),
-    HOME_INSTALL(26,"安装",1),
-    HOME_CHECK(27,"验收",1),
+    HOME_MATERIAL(21, "选材"),
+    HOME_APART(22, "拆改", 1),
+    HOME_HYDROELECTRIC(23, "水电", 1),
+    HOME_WOOD(24, "泥木", 1),
+    HOME_PAINT(25, "油漆", 1),
+    HOME_INSTALL(26, "安装", 1),
+    HOME_CHECK(27, "验收", 1),
 
-    HOME_ENVIRONMENT(31,"环保",1),
-    HOME_GUIDE(32,"导购"),
-    HOME_ASSORT(33,"搭配",1),
-    HOME_LIVING(34,"入住",1),
+    HOME_ENVIRONMENT(31, "环保", 1),
+    HOME_GUIDE(32, "导购"),
+    HOME_ASSORT(33, "搭配", 1),
+    HOME_LIVING(34, "入住", 1),
 
-    HOME_INTELLIGENCE(41,"智能"),
-    HOME_EVALUATE(42,"评测"),
-    HOME_INFO(43,"新闻"),
+    HOME_INTELLIGENCE(41, "智能"),
+    HOME_EVALUATE(42, "评测"),
+    HOME_INFO(43, "新闻"),
 
-    HOME_APPRECIATE(51,"鉴赏"),
-    HOME_TATTLE(52,"杂谈",1),
+    HOME_APPRECIATE(51, "鉴赏"),
+    HOME_TATTLE(52, "杂谈", 1),
 
-    HOME_GOOD(61,"好物"),
-    HOME_HOLDER(62,"居家"),
-    HOME_PET(63,"萌宠"),
-    HOME_GARDEN(64,"园艺"),
-    HOME_STRONG(65,"健身"),
-    HOME_FOODS(66,"美食"),
+    HOME_GOOD(61, "好物"),
+    HOME_HOLDER(62, "居家"),
+    HOME_PET(63, "萌宠"),
+    HOME_GARDEN(64, "园艺"),
+    HOME_STRONG(65, "健身"),
+    HOME_FOODS(66, "美食"),
 
-    HOME_HARD(100,"硬装"),
-    HOME_SOFT(200,"软装"),
+    HOME_HARD(100, "硬装"),
+    HOME_SOFT(200, "软装"),
 
-    HOME_DATE(1000,"日记大赛"),
+    HOME_DATE(1000, "日记大赛"),
 
     // 新增 wiki  http://wiki.ops.focus.cn/pages/viewpage.action?pageId=11239885
     //（攻略-功能）
@@ -95,9 +90,9 @@ public enum NewsCategoryEnum {
     HOME_DECORATION_WINDOW(1204, "家装视窗"),
     // 新增end
 
-    SECOND_HOUSE(2000,"二手房"),
+    SECOND_HOUSE(2000, "二手房"),
 
-    MICRO_ECONOMY(3000,"宏观经济"),
+    MICRO_ECONOMY(3000, "宏观经济"),
 
     FOREIGN(4000, "海外全部"),
     FOREIGN_AMERICA(4001, "美国"),
@@ -113,7 +108,7 @@ public enum NewsCategoryEnum {
     FOREIGN_MALAYSIA(4011, "马来西亚"),
     FOREIGN_GERMANY(4012, "德国"),
     FOREIGN_OTHERS(4013, "其他"),
-    FOREIGN_END(4999,"海外结束标志位"),
+    FOREIGN_END(4999, "海外结束标志位"),
 
     // 之所以商业全部不是5000是填了海外分类的一个坑，主站那边已经把5000视为和海外有关了
     BUSINESS_NEWS(5001, "商业快讯"),
@@ -121,22 +116,21 @@ public enum NewsCategoryEnum {
     BUSINESS_ACTIVITY(5003, "行业活动"),
     BUSINESS_SUBJECT(5004, "商业专题"),
     BUSINESS_DATA(5005, "商业数据"),
-    BUSINESS_ALL(5006, "商业全部")
-    ;
+    BUSINESS_ALL(5006, "商业全部");
 
 
     private int type;
     private String desc;
     private int status;//采用Linux权限标识方法1-可读，2-可写，3-可读并可写
 
-    NewsCategoryEnum(int type, String desc){
+    NewsCategoryEnum(int type, String desc) {
         this.type = type;
         this.desc = desc;
         this.status = 3;
     }
 
-    NewsCategoryEnum(int type,String desc,int status){
-        this(type,desc);
+    NewsCategoryEnum(int type, String desc, int status) {
+        this(type, desc);
         this.status = status;
     }
 
@@ -181,16 +175,15 @@ public enum NewsCategoryEnum {
     }
 
     /**
-     *
      * @param type
      * @return
      */
-    public static boolean hasCategory(Integer type){
+    public static boolean hasCategory(Integer type) {
 
         boolean hasCategory = false;
 
-        for(NewsCategoryEnum newsCategoryEnum : NewsCategoryEnum.values()){
-            if (type == newsCategoryEnum.getType() && (newsCategoryEnum.getStatus()&2) != 0){
+        for (NewsCategoryEnum newsCategoryEnum : NewsCategoryEnum.values()) {
+            if (type == newsCategoryEnum.getType() && (newsCategoryEnum.getStatus() & 2) != 0) {
                 hasCategory = true;
                 break;
             }
@@ -200,17 +193,16 @@ public enum NewsCategoryEnum {
     }
 
     /**
-     *
      * @param type
      * @return
      */
-    public static boolean hasHomeCategory(int type){
+    public static boolean hasHomeCategory(int type) {
 
         boolean hasCategory = false;
 
-        for(NewsCategoryEnum newsCategoryEnum : NewsCategoryEnum.values()){
+        for (NewsCategoryEnum newsCategoryEnum : NewsCategoryEnum.values()) {
             if (inHomeRange(type) && type == newsCategoryEnum.getType()
-                    && (newsCategoryEnum.getStatus()&2) != 0){
+                    && (newsCategoryEnum.getStatus() & 2) != 0) {
                 hasCategory = true;
                 break;
             }
@@ -221,12 +213,13 @@ public enum NewsCategoryEnum {
 
     /**
      * 是否家居类型
+     *
      * @param type
      * @return
      */
-    public static boolean inHomeRange(int type){
+    public static boolean inHomeRange(int type) {
         boolean yes = false;
-        if(type > OTHERS.getType() && type < SECOND_HOUSE.getType()){
+        if (type > OTHERS.getType() && type < SECOND_HOUSE.getType()) {
             yes = true;
         }
         return yes;
@@ -234,12 +227,13 @@ public enum NewsCategoryEnum {
 
     /**
      * 是否房产类型
+     *
      * @param type
      * @return
      */
-    public static boolean inHouseRange(int type){
+    public static boolean inHouseRange(int type) {
         boolean yes = false;
-        if(type > 0 && type <= OTHERS.getType()){
+        if (type > 0 && type <= OTHERS.getType()) {
             yes = true;
         }
         return yes;
@@ -247,26 +241,28 @@ public enum NewsCategoryEnum {
 
     /**
      * 是否二手房类型
+     *
      * @param type
      * @return
      */
-    public static boolean inSecondHouseRange(int type){
+    public static boolean inSecondHouseRange(int type) {
         return SECOND_HOUSE.getType() == type;
     }
 
     /**
      * 是否宏观经济类型
+     *
      * @param type
      * @return
      */
-    public static boolean inMicroEconomyRange(int type){
+    public static boolean inMicroEconomyRange(int type) {
         return MICRO_ECONOMY.getType() == type;
     }
 
     /**
      * 是否海外类型
      */
-    public static boolean inForeignRange(int type){
+    public static boolean inForeignRange(int type) {
         boolean yes = false;
         if (type >= FOREIGN.getType() && type < FOREIGN_END.getType()) {
             yes = true;
@@ -276,6 +272,7 @@ public enum NewsCategoryEnum {
 
     /**
      * 是否商业类型
+     *
      * @param type
      * @return
      */
@@ -289,22 +286,24 @@ public enum NewsCategoryEnum {
 
     /**
      * 该关键字是否属于家居
+     *
      * @param keyWord
      * @return 是家居返回 对应编号，否返回-1
      */
-    public static int getTypeByDesc(String keyWord){
+    public static int getTypeByDesc(String keyWord) {
         for (NewsCategoryEnum newsCategoryEnum : NewsCategoryEnum.values()) {
-            if(keyWord.equals(newsCategoryEnum.getDesc()))
+            if (keyWord.equals(newsCategoryEnum.getDesc())) {
                 return newsCategoryEnum.getType();
+            }
         }
         return -1;
     }
 
-    public static String getDescByType(int type){
-        for(NewsCategoryEnum newsCategoryEnum:NewsCategoryEnum.values()){
-            if(type ==newsCategoryEnum.getType())
+    public static String getDescByType(int type) {
+        for (NewsCategoryEnum newsCategoryEnum : NewsCategoryEnum.values()) {
+            if (type == newsCategoryEnum.getType()) {
                 return newsCategoryEnum.getDesc();
-
+            }
         }
         return "";
     }
