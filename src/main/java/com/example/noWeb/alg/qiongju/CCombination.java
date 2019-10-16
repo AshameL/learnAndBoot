@@ -20,6 +20,7 @@ public class CCombination {
      * @return
      */
     public Boolean next(){
+        return true;// 这条是临时占位置的
 
     }
 }
