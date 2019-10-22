@@ -2,7 +2,7 @@ package com.example.learn.local.leetocde.链表专题;
 
 import com.example.learn.local.leetocde.ListNode;
 
-public class No24_swapPairs {
+public class No160_getIntersectionNode {
     /**
      * 设 A 的长度为 a + c，B 的长度为 b + c，
      * 其中 c 为尾部公共部分长度，
@@ -50,7 +50,7 @@ public class No24_swapPairs {
         cnode2.next = cnode3;
         cnode3.next = null;
 
-        No24_swapPairs handler = new No24_swapPairs();
+        No160_getIntersectionNode handler = new No160_getIntersectionNode();
         handler.getIntersectionNode(anode1, bnode1);
     }
 }
