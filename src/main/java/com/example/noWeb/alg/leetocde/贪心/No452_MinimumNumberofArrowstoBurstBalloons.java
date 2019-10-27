@@ -1,6 +1,4 @@
-package com.example.learn.local.leetocde.贪心;
-
-import org.springframework.util.Assert;
+package com.example.noWeb.alg.leetocde.贪心;
 
 import java.util.Arrays;
 import java.util.Comparator;

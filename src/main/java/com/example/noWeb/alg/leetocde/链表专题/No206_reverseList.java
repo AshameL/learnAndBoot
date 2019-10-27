@@ -1,6 +1,6 @@
-package com.example.learn.local.leetocde.链表专题;
+package com.example.noWeb.alg.leetocde.链表专题;
 
-import com.example.learn.local.leetocde.ListNode;
+import com.example.noWeb.alg.leetocde.ListNode;
 
 public class No206_reverseList {
     public ListNode reverseList(ListNode head) {

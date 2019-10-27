@@ -1,6 +1,6 @@
-package com.example.learn.local.leetocde.链表专题;
+package com.example.noWeb.alg.leetocde.链表专题;
 
-import com.example.learn.local.leetocde.ListNode;
+import com.example.noWeb.alg.leetocde.ListNode;
 
 /**
  * 方法2：我觉得还可以用栈，不过题目好像不太建议。可是reverseList这个用到No206的基础，加油。

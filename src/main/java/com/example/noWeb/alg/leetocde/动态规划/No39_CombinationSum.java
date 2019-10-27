@@ -1,4 +1,4 @@
-package com.example.learn.local.leetocde.动态规划;
+package com.example.noWeb.alg.leetocde.动态规划;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

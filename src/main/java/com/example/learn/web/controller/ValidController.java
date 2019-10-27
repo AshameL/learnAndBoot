@@ -103,4 +103,9 @@ public class ValidController {
         return null;
     }
 
+    @RequestMapping("/test")
+    public Object testInteger(@RequestParam("id") Long id,@RequestParam("str")String str){
+        System.out.println(id);
+        return String.valueOf(id);
+    }
 }
