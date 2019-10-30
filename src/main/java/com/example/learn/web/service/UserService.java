@@ -48,8 +48,11 @@ public class UserService  {
             Matcher aMatcher = aPattern.matcher(content);
             int projectStart = matcher.start();
             boolean flag = false;
+            System.out.println(matcher.group());
+
             // 在每个楼盘分词前后查找超链，如果在300字以内，则该楼盘不生成楼盘词链接
             while (aMatcher.find()) {
+                System.out.println(aMatcher.group());
                 int aStart = aMatcher.start();
                 int textLength = 0;
                 log.debug("aMatcher.end() :: {}",aMatcher.end());
