@@ -1,6 +1,6 @@
-package com.example.learn.local.leetocde.链表专题;
+package com.example.noWeb.alg.leetocde.链表专题;
 
-import com.example.learn.local.leetocde.ListNode;
+import com.example.noWeb.alg.leetocde.ListNode;
 
 public class No2_AddTwoNumbers {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {

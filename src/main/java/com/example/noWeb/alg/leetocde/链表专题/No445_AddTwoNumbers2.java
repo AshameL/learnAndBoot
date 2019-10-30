@@ -1,8 +1,7 @@
-package com.example.learn.local.leetocde.链表专题;
+package com.example.noWeb.alg.leetocde.链表专题;
 
-import com.example.learn.local.leetocde.ListNode;
+import com.example.noWeb.alg.leetocde.ListNode;
 
-import java.util.List;
 import java.util.Stack;
 
 /**

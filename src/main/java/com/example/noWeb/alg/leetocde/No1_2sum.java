@@ -1,4 +1,4 @@
-package com.example.learn.local.leetocde;
+package com.example.noWeb.alg.leetocde;
 
 import java.util.HashMap;
 import java.util.Map;
