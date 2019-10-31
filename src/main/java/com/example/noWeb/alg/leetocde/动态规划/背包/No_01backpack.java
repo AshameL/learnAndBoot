@@ -21,7 +21,7 @@ public class No_01backpack {
             v[i] = scanner.nextInt();
             w[i] = scanner.nextInt();
         }
-        // 正文 int[0][V]
+        //##################################### 正文 int[0][V]
         int[][] dp = new int[N][V + 1];
         // 初始化第0个物品时的价值
         for (int i = 0; i <= V; i++) {
