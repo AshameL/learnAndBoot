@@ -32,39 +32,6 @@ public class BusinessExceptionAdvice<T> {
             Object result = proceedingJoinPoint.proceed();
             return result;
         }catch (Exception e){
-//            MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();
-//            Class retTypeCla = methodSignature.getReturnType();
-//            String retTypeName = retTypeCla.getName();
-//            Resp resp = null;
-//            if(retTypeName.equals(Resp.class.getName())){
-//                resp = (Resp)retTypeCla.newInstance();
-//            }
-//
-//            String requestId = UUID.randomUUID().toString();
-//            //todo 如果是分页数据，是否要对分页数据进行填充
-//            if(e instanceof BusinessException){
-//                BusinessException be = (BusinessException)e;
-//                logger.error(String.format("requestId=%s,%s.%s:",requestId,proceedingJoinPoint.getTarget().getClass().getName(),
-//                        proceedingJoinPoint.getSignature().getName().toString(),be.getMsg()),e);
-//                if(resp == null){
-//
-//                    return null;
-//                }
-//                resp.setCode(be.getCode());
-//                resp.setMsg(be.getMsg());
-//                resp.setRequestId(requestId);
-//                return resp;
-//            }else{
-//                logger.error(String.format("requestId=%s,%s.%s:",requestId,proceedingJoinPoint.getTarget().getClass().getName(),
-//                        proceedingJoinPoint.getSignature().getName().toString()),e);
-//                if(resp == null){
-//                    return null;
-//                }
-//                resp.setCode(CodeEnum.SERVER_ERROR.getCode());
-//                resp.setMsg(CodeEnum.SERVER_ERROR.getMsg());
-//                resp.setRequestId(requestId);
-//                return resp;
-//            }
             return null;
         }
     }
