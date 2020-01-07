@@ -12,7 +12,7 @@ public class No206_reverseList {
             current.next = prev;
             // 记录当前节点
             prev = current;
-            // 下一个结点成为当前节点
+            // 下一个结点成为当前节点 // 跟上面的一行不能调换嗷
             current = next;
         }
         return prev;
