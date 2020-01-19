@@ -9,6 +9,6 @@ public class T53字符流中第一个不重复的字符 {
 
     //return the first appearence once char in current stringstream
     public char FirstAppearingOnce() {
-
+        return '1';
     }
 }
