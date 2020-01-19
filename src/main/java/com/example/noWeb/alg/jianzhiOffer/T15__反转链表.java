@@ -7,8 +7,9 @@ import com.example.noWeb.alg.leetocde.ListNode;
  */
 public class T15__反转链表 {
     public ListNode ReverseList(ListNode head) {
-        if(head == null)
+        if(head == null) {
             return null;
+        }
 
         ListNode pre = null;
         ListNode next = null;
@@ -33,5 +34,14 @@ public class T15__反转链表 {
 
         }
         return pre;
+    }
+    public ListNode ReverseListCommon(ListNode head){
+        if(head == null || head.next==null){
+            return head;
+        }
+        ListNode reHead = ReverseListCommon(head.next);
+        head.next.next = head;
+        head.next = null;
+        return reHead;
     }
 }
