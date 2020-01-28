@@ -1,6 +1,6 @@
 package com.example.noWeb.alg.jianzhiOffer;
 
-public class T11__二进制1的个数 {
+public class T11二进制1的个数 {
      // 很巧妙的方法！！
     public int NumberOf1(int n) {
         int count = 0;

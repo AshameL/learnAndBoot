@@ -2,23 +2,24 @@ package com.example.noWeb.alg.jianzhiOffer;
 
 import java.util.Stack;
 
+/**
+ * 二分查找的变型。
+ * 时间复杂度 logN级别。
+ */
 public class T06旋转数组的最小数字 {
-    public int minNumberInRotateArray(int[] array) {
-        if (array.length == 0)
-            return 0;
-        if (array.length == 1)
-            return array[0];
-        int t = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                return array[i + 1];
-            } else {
-                if (i == array.length - 2) {
-                    return array[0];
-                }
+    public int minNumberInRotateArray(int [] array) {
+        int low = 0;
+        int high = array.length-1;
+        while (low<high){
+            int mid = low+(high-low)/2;
+            if(array[mid] > array[high]){
+                low = mid+1;
+            }else if(array[mid]==array[high]) {
+                high = high-1;
+            }else {
+                high = mid;
             }
         }
-        return array[0];
-
+        return array[low];
     }
 }

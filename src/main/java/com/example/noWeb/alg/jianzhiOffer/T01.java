@@ -18,6 +18,20 @@ public class T01 {
 
         return false;
     }
+    public boolean Find1(int target, int [][] array) {
+        int i = array.length;
+        int j =0;
+        while(i>=0 && j < array[0].length){
+            if(target == array[i][j]){
+                return true;
+            }else if( target > array[i][j]){
+                j++;
+            }else{
+                i--;
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         T01 t = new T01();

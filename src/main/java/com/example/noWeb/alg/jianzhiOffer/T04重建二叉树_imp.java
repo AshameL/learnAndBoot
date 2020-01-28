@@ -6,12 +6,13 @@ import com.example.noWeb.alg.leetocde.TreeNode;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class T04___重建二叉树 {
+public class T04重建二叉树_imp {
     public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
         return f(pre, 0, pre.length - 1, in, 0, in.length - 1);
     }
 
     private TreeNode f(int[] pre, int preHead, int preTail, int[] in, int inHead, int inTail) {
+        // 递归先写终止条件
         if (preHead > preTail || inHead > inTail) {
             return null;
         }
