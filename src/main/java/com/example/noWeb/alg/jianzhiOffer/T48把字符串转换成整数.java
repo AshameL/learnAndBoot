@@ -1,7 +1,7 @@
 package com.example.noWeb.alg.jianzhiOffer;
 
 
-public class T48_把字符串转换成整数 {
+public class T48把字符串转换成整数 {
     public int StrToInt(String str) {
         if (str.equals("") || str.length() == 0) {
             return 0;

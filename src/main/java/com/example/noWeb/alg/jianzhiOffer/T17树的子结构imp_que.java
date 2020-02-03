@@ -6,7 +6,7 @@ import com.example.noWeb.alg.leetocde.TreeNode;
 /**
  *
  */
-public class T17____树的子结构 {
+public class T17树的子结构imp_que {
     public boolean HasSubtree(TreeNode root1, TreeNode root2) {
         if(root2 == null|| root1==null){
             return false;

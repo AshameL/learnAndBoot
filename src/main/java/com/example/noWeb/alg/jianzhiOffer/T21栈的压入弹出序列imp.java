@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
 
  */
-public class T21__栈的压入弹出序列 {
+public class T21栈的压入弹出序列imp {
     public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
         int n = pushSequence.length;
         Stack<Integer> stack = new Stack<>();

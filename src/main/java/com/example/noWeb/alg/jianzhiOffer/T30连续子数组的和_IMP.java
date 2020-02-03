@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 
-public class T30连续子数组的和 {
+public class T30连续子数组的和_IMP {
     //https://www.nowcoder.com/profile/844008/codeBookDetail?submissionId=1519441
     public int FindGreatestSumOfSubArray(int[] array) {
         int n = array.length;

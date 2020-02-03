@@ -3,7 +3,7 @@ package com.example.noWeb.alg.jianzhiOffer;
 
 import com.example.noWeb.alg.leetocde.ListNode;
 
-public class T54链表中环的入口 {
+public class T54链表中环的入口_imp {
     public ListNode EntryNodeOfLoop(ListNode pHead) {
         if(pHead==null||pHead.next==null){
             return null;

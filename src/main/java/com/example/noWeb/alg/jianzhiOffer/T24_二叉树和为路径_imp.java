@@ -4,7 +4,7 @@ import com.example.noWeb.alg.leetocde.TreeNode;
 
 import java.util.ArrayList;
 
-public class T24_二叉树和为路径 {
+public class T24_二叉树和为路径_imp {
     private ArrayList<ArrayList<Integer>> listAll = new ArrayList<>();
     private ArrayList<Integer> list = new ArrayList<>();
 

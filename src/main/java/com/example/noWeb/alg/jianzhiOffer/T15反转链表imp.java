@@ -5,7 +5,7 @@ import com.example.noWeb.alg.leetocde.ListNode;
 /**
  * 背下来啊！！！！！！
  */
-public class T15__反转链表 {
+public class T15反转链表imp {
     public ListNode ReverseList(ListNode head) {
         if(head == null) {
             return null;

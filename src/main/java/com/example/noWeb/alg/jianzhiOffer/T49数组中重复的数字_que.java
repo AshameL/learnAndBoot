@@ -1,7 +1,7 @@
 package com.example.noWeb.alg.jianzhiOffer;
 
 
-public class T50构建乘积数组NULL {
+public class T49数组中重复的数字_que {
     //boolean只占一位，所以还是比较省的
     public boolean duplicate(int numbers[], int length, int[] duplication) {
         boolean[] k = new boolean[length];

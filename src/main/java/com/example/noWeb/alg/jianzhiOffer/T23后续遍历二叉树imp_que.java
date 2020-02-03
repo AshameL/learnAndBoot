@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *   1    3
  *   变成 132
  */
-public class T23后续遍历二叉树 {
+public class T23后续遍历二叉树imp_que {
     public boolean VerifySquenceOfBST(int [] sequence) {
         int count=sequence.length;
         if(count==0)

@@ -7,7 +7,7 @@ import java.util.*;
 /**
  *
  */
-public class T18___二叉树镜像 {
+public class T18二叉树镜像 {
     public void Mirror(TreeNode root) {
         if(root==null)
             return ;

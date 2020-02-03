@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 
-public class T38_二叉树的深度 {
+public class T38二叉树的深度 {
     // 递归方法
     public int TreeDepth(TreeNode root) {
         if (root == null) {

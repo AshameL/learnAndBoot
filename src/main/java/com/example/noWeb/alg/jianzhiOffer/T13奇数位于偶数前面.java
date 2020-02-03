@@ -5,7 +5,7 @@ package com.example.noWeb.alg.jianzhiOffer;
  * 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
  */
 
-public class T13____奇数位于偶数前面 {
+public class T13奇数位于偶数前面 {
     /**
      * 1.要想保证原有次序，则只能顺次移动或相邻交换。
      * 2.i从左向右遍历，找到第一个偶数。
@@ -18,10 +18,12 @@ public class T13____奇数位于偶数前面 {
             return;
         int i = 0, j;
         while (i < a.length) {
+            // i 指向第一个奇数
             while (i < a.length && !isEven(a[i])) {
                 i++;
             }
             j = i + 1;
+            // j 指向第一个偶数
             while (j < a.length && isEven(a[j])) {
                 j++;
             }

@@ -4,7 +4,7 @@ package com.example.noWeb.alg.jianzhiOffer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class T34_第一个只出现一次的字符 {
+public class T34_第一个只出现一次的字符que {
     public int FirstNotRepeatingChar(String str) {
         int[] words = new int[58];
         for(int i = 0;i<str.length();i++){

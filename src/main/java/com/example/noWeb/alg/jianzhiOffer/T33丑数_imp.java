@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class T33丑数 {
+public class T33丑数_imp {
     public   int GetUglyNumber_Solution(int index) {
         if(index==0)
             return 0;

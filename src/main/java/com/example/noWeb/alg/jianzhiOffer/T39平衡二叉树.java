@@ -25,7 +25,7 @@ public class T39平衡二叉树 {
     }
 
     private int max(int a, int b) {
-        return a > b ? a : b;
+        return Math.max(a, b);
     }
 
 }

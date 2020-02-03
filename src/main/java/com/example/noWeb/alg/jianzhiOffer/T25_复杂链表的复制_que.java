@@ -2,7 +2,7 @@ package com.example.noWeb.alg.jianzhiOffer;
 
 import com.example.noWeb.alg.leetocde.RandomListNode;
 
-public class T25_复杂链表的复制 {
+public class T25_复杂链表的复制_que {
     // 这题我不懂！！！！！！！1
     //https://www.nowcoder.com/profile/963880/codeBookDetail?submissionId=1512226
     public RandomListNode Clone(RandomListNode pHead) {

@@ -10,4 +10,5 @@ public class T47不用加减乘除做加法 {
         }
         return num1;
     }
+
 }

@@ -17,7 +17,7 @@ import java.util.Stack;
  * 向左走存入整行的值，当存入后，该行再也不会被遍历，代表下边界的 down 减一，同时判断是否和代表上边界的 up 交错
  * 向上走存入整列的值，当存入后，该列再也不会被遍历，代表左边界的 left 加一，同时判断是否和代表右边界的 right 交错
  */
-public class T19_____顺时针打印矩阵__ {
+public class T19顺时针打印矩阵que {
     public ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
         if(matrix==null||matrix.length==0||matrix[0].length==0){
