@@ -32,7 +32,6 @@ public class No1019_链表中下一个更大节点 {
         }
         return res;
 
-
     }
 
 

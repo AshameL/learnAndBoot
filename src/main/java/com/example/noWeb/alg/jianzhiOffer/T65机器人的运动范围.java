@@ -2,37 +2,36 @@ package com.example.noWeb.alg.jianzhiOffer;
 
 
 public class T65机器人的运动范围 {
-    public int movingCount(int threshold, int rows, int cols) {
-        boolean[] visited = new boolean[rows * cols];
-        return movingCountCore(threshold, rows, cols, 0, 0, visited);
+    int count;
+    boolean[][]getVisited;
+    public int movingCount(int m, int n, int k) {
+        if(m <= 0 || n <= 0 || k < 0) return 0;
+        getVisited = new boolean[m][n];
+        dfs(0,0,m,n,k);
+        return count;
     }
-
-    private int movingCountCore(int threshold, int rows, int cols,
-                                int row, int col, boolean[] visited) {
-        if (row < 0 || row >= rows || col < 0 || col >= cols) {
-            return 0;
-        }
-        int i = row * cols + col;
-        if (visited[i] || !checkSum(threshold, row, col)) {
-            return 0;
-        }
-        visited[i] = true;
-        return 1 + movingCountCore(threshold, rows, cols, row, col + 1, visited)
-                + movingCountCore(threshold, rows, cols, row, col - 1, visited)
-                + movingCountCore(threshold, rows, cols, row + 1, col, visited)
-                + movingCountCore(threshold, rows, cols, row - 1, col, visited);
+    public void dfs(int i,int j,int m,int n,int k){
+        if(i < 0 || j < 0 || i >= m || j >= n || getVisited[i][j] == true) return;
+        getVisited[i][j] = true;
+        if(!canK(i,j,k)) return;
+        count++;
+        dfs(i + 1,j,m,n,k);
+        dfs(i - 1,j,m,n,k);
+        dfs(i,j - 1,m,n,k);
+        dfs(i,j + 1,m,n,k);
     }
-
-    private boolean checkSum(int threshold, int row, int col) {
+    public boolean canK(int i,int j,int k){
         int sum = 0;
-        while (row != 0) {
-            sum += row % 10;
-            row = row / 10;
+        while(i != 0){
+            sum += i % 10;
+            i /= 10;
         }
-        while (col != 0) {
-            sum += col % 10;
-            col = col / 10;
+        while(j != 0){
+            sum += j % 10;
+            j /= 10;
         }
-        return sum <= threshold;
+        return sum <= k;
     }
+
+
 }

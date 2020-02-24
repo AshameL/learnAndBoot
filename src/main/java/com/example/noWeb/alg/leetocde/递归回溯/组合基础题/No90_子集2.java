@@ -5,33 +5,36 @@ import java.util.Arrays;
 import java.util.List;
 
 public class No90_子集2 {
-    List<List<Integer>> res = new ArrayList<>();
+
+    List<List<Integer>> res = new ArrayList();
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
-        dfs(new ArrayList<>(),nums,0);
+        boolean[] visited = new boolean[nums.length];
+        List<Integer> current = new ArrayList();
+        dfs(nums, 0, current, visited);
+
         return res;
     }
 
-    private void dfs(List<Integer> cur, int[] nums, int index) {
-        if (index == nums.length) {
-            res.add(new ArrayList<>(cur));
+
+    public void dfs(int[] nums, int index, List<Integer> current, boolean[] visited) {
+        if (nums.length == index) {
+            res.add(new ArrayList(current));
             return;
         }
-        cur.add(nums[index]);
-        dfs(cur,nums,index+1);
-        cur.remove(cur.size()-1);
 
-        while (index+1 <nums.length && nums[index]==nums[index+1]){
-            index++;
+        if (index == 0 || nums[index - 1] != nums[index] || visited[index - 1]) {
+            visited[index] = true;
+            current.add(nums[index]);
+            dfs(nums, index + 1, current, visited);
+            current.remove(current.size() - 1);
+            visited[index] = false;
         }
-        dfs(cur,nums,index+1);
-    }
 
-    public static void main(String[] args) {
-        No90_子集2 hand = new No90_子集2();
-        int[] nums = {1,2,2};
-        Object obj = hand.subsetsWithDup(nums);
-        System.out.println(obj);
+
+        dfs(nums, index + 1, current, visited);
+
+
     }
 }

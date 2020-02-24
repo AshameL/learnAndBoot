@@ -27,29 +27,26 @@ public class T04重建二叉树_imp {
     }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
+
         return build(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
 
     TreeNode build(int[] preorder, int preLeft, int preRight, int[] inorder, int inLeft, int inRight) {
-        if (preLeft > preorder.length - 1 || inLeft > inRight) return null;
+        if (preLeft > preRight || inLeft > inRight) return null;
+
+        TreeNode root = new TreeNode(preorder[preLeft]);
         int pos = 0;
         for (int i = inLeft; i <= inRight; i++) {
-            if (preorder[preLeft] == inorder[i]) {
+            if (inorder[i] == preorder[preLeft]) {
                 pos = i;
-                System.out.println(pos);
                 break;
             }
         }
-        TreeNode root = new TreeNode(preorder[preLeft]);
-        root.left = build(preorder, preLeft + 1, preLeft + pos - inLeft, inorder, inLeft, pos - 1);
-        root.right = build(preorder, preLeft + pos - inLeft + 1, preRight, inorder, pos + 1, inRight);
-        return root;
-    }
+        root.left = build(preorder, preLeft + 1, preLeft - inLeft + pos, inorder, inLeft, pos - 1);
+        root.right = build(preorder, preLeft - inLeft + pos + 1, preRight, inorder, pos + 1, inRight);
 
-    public static void main(String[] args) {
-        int[] preorder = {3, 9, 20, 15, 7};
-        int[] inorder = {9, 3, 15, 20, 7};
-        T04重建二叉树_imp t = new T04重建二叉树_imp();
-        t.buildTree(preorder, inorder);
+        return root;
+
+
     }
 }

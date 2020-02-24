@@ -38,11 +38,11 @@ public class T24_二叉树和为路径_imp {
             return arr;
         ArrayList<Integer> a1 = new ArrayList<Integer>();
         int sum = 0;
-        pa(root, target, arr, a1, sum);
+        dfs(root, target, arr, a1, sum);
         return arr;
     }
 
-    public void pa(TreeNode root, int target, ArrayList<ArrayList<Integer>> arr, ArrayList<Integer> a1, int sum) {
+    public void dfs(TreeNode root, int target, ArrayList<ArrayList<Integer>> arr, ArrayList<Integer> a1, int sum) {
         if (root == null)
             return;
         sum += root.val;
@@ -57,8 +57,8 @@ public class T24_二叉树和为路径_imp {
 
         }
         a1.add(root.val);
-        pa(root.left, target, arr, a1, sum);
-        pa(root.right, target, arr, a1, sum);
+        dfs(root.left, target, arr, a1, sum);
+        dfs(root.right, target, arr, a1, sum);
         a1.remove(a1.size() - 1);
     }
 }
