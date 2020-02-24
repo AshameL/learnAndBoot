@@ -5,49 +5,56 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 
 public class T64矩阵中的路径 {
-    public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
-        if (matrix == null || matrix.length == 0 || str == null || str.length == 0 || matrix.length != rows * cols || rows <= 0 || cols <= 0 || rows * cols < str.length) {
-            return false;
-        }
+    boolean[][] vis;
+    int[][] dir = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
-        boolean[] visited = new boolean[rows * cols];
-        int pathLength =0;
-
-        for (int i = 0; i <= rows - 1; i++) {
-            for (int j = 0; j <= cols - 1; j++) {
-                if (hasPathCore(matrix, rows, cols, str, i, j, visited, pathLength)) {
-                    return true;
+    public boolean exist(char[][] board, String word) {
+        int m = board.length;
+        int n = board[0].length;
+        vis = new boolean[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == word.charAt(0) && !vis[i][j]) {
+                    vis[i][j] = true;
+                    if (backtrack(board, word, i, j, 1)) {
+                        return true;
+                    }
+                    vis[i][j] = false;
                 }
             }
         }
-
         return false;
     }
 
-    public boolean hasPathCore(char[] matrix, int rows, int cols, char[] str, int row, int col,
-                               boolean[] visited, int pathLength) {
-        boolean flag = false;
+    private boolean backtrack(char[][] board, String word, int row, int col, int start) {
+        if (start == word.length()) {
+            return true;
+        }
+        for (int i = 0; i < 4; i++) {
+            int x = row + dir[i][0];
+            int y = col + dir[i][1];
+            if (x >= 0 && x < board.length && y >= 0 && y < board[0].length) {
+                if (!vis[x][y] && board[x][y] == word.charAt(start)) {
+                    vis[x][y] = true;
+                    if (backtrack(board, word, x, y, start + 1)) {
+                        return true;
+                    }
+                    vis[x][y] = false;
+                }
 
-        if (row >= 0 && row < rows
-                && col >= 0 && col < cols
-                && !visited[row * cols + col]
-                && matrix[row * cols + col] == str[pathLength]) {
-            pathLength++;
-            visited[row * cols + col] = true;
-            if (pathLength == str.length) {
-                return true;
-            }
-            flag = hasPathCore(matrix, rows, cols, str, row, col + 1, visited, pathLength) ||
-                    hasPathCore(matrix, rows, cols, str, row + 1, col, visited, pathLength) ||
-                    hasPathCore(matrix, rows, cols, str, row, col - 1, visited, pathLength) ||
-                    hasPathCore(matrix, rows, cols, str, row - 1, col, visited, pathLength);
-
-            if (!flag) {
-                pathLength--;
-                visited[row * cols + col] = false;
             }
         }
+        return false;
+    }
 
-        return flag;
+
+    public static void main(String[] args) {
+        T64矩阵中的路径 t = new T64矩阵中的路径();
+        char[][] board = {{'a', 'b', 'c', 'e'}, {'s', 'f', 'c', 's'}, {'a', 'd', 'e', 'e'}};
+        String word = "abcced";
+//        board  = new char[][]{{'a'}};
+//        word = "a";
+        Object obj = t.exist(board, word);
+        System.out.println(obj);
     }
 }
