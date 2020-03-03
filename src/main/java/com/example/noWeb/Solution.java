@@ -6,44 +6,35 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 public class Solution {
-    class myType {
-        TreeNode root;
-        boolean used;
+    public int pivotIndex(int[] nums) {
 
-        myType(TreeNode root, boolean used) {
-            this.root = root;
-            this.used = used;
-        }
+        int l = 0,r = nums.length-1;
+        int sum1 = nums[l],sum2=nums[r];
+        while(l<r){
+            if(sum1<sum2){
+                l++;
+                sum1 +=nums[l];
 
-    }
-
-    private List<Integer> res = new ArrayList<>();
-
-    public List<Integer> preorderTraversal(TreeNode root) {
-        if (root == null) {
-            return res;
-        }
-        Stack<myType> stack = new Stack<>();
-        stack.push(new myType(root, false));
-
-        while (!stack.isEmpty()) {
-            myType mt = stack.pop();
-            if (!mt.used) {
-                mt.used = true;
-                stack.push(mt);
-            } else {
-                // step 3 右
-                if (mt.root.right != null) {
-                    stack.push(new myType(mt.root.right, false));
+            }else if(sum1 >sum2){
+                r--;
+                sum2 += nums[r];
+            }else{
+                if(r-l==2){
+                    return l+1;
+                }else{
+                    l++;
+                    r--;
                 }
-                // step 2 左
-                if (mt.root.left != null) {
-                    stack.push(new myType(mt.root.left, false));
-                }
-                // step 1 根
-                res.add(mt.root.val);
             }
         }
-        return res;
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] nums = {1,7,3,6,5,6};
+//        int[] nums = {1,2,3};
+        int flag = solution.pivotIndex(nums);
+        System.out.println(flag);
     }
 }

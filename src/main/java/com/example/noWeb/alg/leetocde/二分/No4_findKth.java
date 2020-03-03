@@ -22,6 +22,7 @@ public class No4_findKth {
         int len2 = nums2.length;
 
         if (starta >= len1) {
+
             return nums2[startb + k - 1];
         }
         if (startb >= len2)
@@ -41,5 +42,11 @@ public class No4_findKth {
             return findKth(nums1, nums2, starta + k / 2, startb, k - k / 2);
 
     //https://www.cnblogs.com/lupx/p/lupeixin.html  这个url讲的好
+    }
+
+    public static void main(String[] args) {
+        int[] num1 = {};
+        int[] num2 = {1};
+        findMedianSortedArrays(num1,num2);
     }
 }
