@@ -2,7 +2,9 @@ package com.example.noWeb.alg.leetocde.双指针;
 
 import java.util.Arrays;
 
-public class No283 {
+// 类似 75 颜色分类
+public class No283_移动零 {
+
     public static void moveZeroes(int[] nums) {
         int i = 0, j = 0;
         int n = nums.length;

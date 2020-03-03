@@ -10,7 +10,7 @@ public class No32_LongestValidParentheses {
             return 0;
         }
         int len = s.length();
-
+        char[] chars = s.toCharArray();
         Stack<Integer> stack = new Stack<>();
         for (int index = 0; index < len; index++) {
             // 遇左括号（，压栈（栈中元素为当前位置所处的下标）

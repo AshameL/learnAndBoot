@@ -1,6 +1,6 @@
 package com.example.noWeb.alg.leetocde.动态规划;
 
-public class 股票最佳时机 {
+public class No121_股票最佳时机 {
     public int maxDiff(int[] nums) {
         int res = 0;
         int minV= nums[0];//前i-1天的最小值
